@@ -82,6 +82,13 @@ header {
     box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
 }
 
+.btn-header.selected {
+    outline: 2px solid #333;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    z-index: 1;  
+}
+
 .btn-header:hover {
     transform: scale(1.1);
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
@@ -202,17 +209,6 @@ main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Aquí comienzan los colores de botones según tipo */
 .normal {
     background-color: var(--type-normal);
@@ -302,4 +298,39 @@ main {
 .fairy {
     background-color: var(--type-fairy);
     color: var(--clr-black);
+}
+
+
+
+.popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+.popup.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    transform-origin: center center;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.close-btn, .pokemon-todos {
+    cursor: pointer;
 }

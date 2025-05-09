@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+
+  <div id="pokemon-popup" class="popup hidden">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">X</button>
+      <!-- Contenido dinámico aquí -->
+    </div>
+  </div>
     
     <header>
         <nav class="nav">
             <img src="./img/logo.png" alt="Logo Pokédex">
             <ul class="nav-list">
-                <li class="nav-item"><button class="btn btn-header" id="ver-todos">Ver todos</button></li> 
+                <li class="nav-item"><button class="btn btn-header selected" id="ver-todos">Ver todos</button></li> 
                 <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
                 <li class="nav-item"><button class="btn btn-header fire" id="fire">Fire</button></li>
                 <li class="nav-item"><button class="btn btn-header water" id="water">Water</button></li>
@@ -38,7 +45,7 @@
     <main>
         
         <div id="todos">
-          <div class="pokemon-todos" id="listaPokemon">
+          <div class="pokemon-todos" id="listaPokemon" onclick="openPopupFromCard(this)">
             <!-- <div class="pokemon">
               <p class="pokemon-id-back">#025</p>
               <div class="pokemon-imagen">
@@ -61,7 +68,6 @@
             </div> -->
           </div>
         </div>
-
     </main>
 
     <script src="./js/main.js"></script>
